@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <package xmlns="http://www.mendix.com/package/1.0/">
-    <clientModule name="DojoWidgetBoilerplate" version="2.0.0" xmlns="http://www.mendix.com/clientModule/1.0/">
-        <widgetFiles>
-            <widgetFile path="DojoWidgetBoilerplate/DojoWidgetBoilerplate.xml" />
-        </widgetFiles>
-        <files>
-            <file path="DojoWidgetBoilerplate/widget/" />
-        </files>
-    </clientModule>
+	<clientModule name="MyTextBox" version="0.1" xmlns="http://www.mendix.com/clientModule/1.0/">
+		<widgetFiles>
+			<widgetFile path="MyTextBox/MyTextBox.xml"/>
+		</widgetFiles>
+		<files>
+			<file path="MyTextBox/widget/"/>
+		</files>
+	</clientModule>
 </package>

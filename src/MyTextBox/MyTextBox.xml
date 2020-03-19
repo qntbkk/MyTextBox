@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="MyTextBox.widget.MyTextBox" needsEntityContext="true" xmlns="http://www.mendix.com/widget/1.0/">
+  <name>MyTextBox</name>
+  <description>MyTextBox</description>
+
+  <icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2Fy
+ZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAfZJREFUeNqMUs9rE0EU/mZ2sttfFloJ
+8SJ40ouItwiChx77H7TQHOwpPVW8JkL+gnhqbsEkUIjg3Z68eLM9lbb0UkXclmor
+bWOT7O7sjG8mzQqrNX3MxwzvvfnmzXsfazQaawCKGG21QqGw8pe3Xq/rMAxHwuSR
+IQ0hpbRE8fd3iH7u48fHdXS/dSE7lBAPHnn4+jOGeWnjJmCYvNw8Ju+vYOLuA6hY
+QikFTZBmp/h1BCKKIpvAxDSBGL0JqEiCKwdfTyWOLzUeUdzkXUtgTHU+4fLUh7+9
+h4vz2OLgRMHvKBv/L4GpYPftK5wd+/ii8lDPXtrg7BXa7Tay2SyazaZOT0ZQhy3B
+h9Z79Ombt5+vYmlhATexVqtVTCrYOXLRI4KnV81a3jgHGINHGHMIgsE1ZyHgcY4X
+eWEbmxCc9F2EmmFYES2aAkMEDqYMF7dN1nTuqYEGTG4yxjc7R1jfPUwIph2NqYzG
+ZEbBc2I49DqnyjLkd7lKCEQcx7VyuZxIOZfL2eC9W4ouc4yPuZgSHC59ISJljRsf
+d/4QVKtVo+9E45VKRRsRed0zMIejF7j4RbVTG2BGQC44tD+5M4MgCCDSnR1+YW3T
+x0UQoR9IhKRMK2vOoOmGl2FYfDw3qCBNMBTM1mp+5BhN7r8IaqVSqYibWe23AAMA
+WwlWhAsSTwAAAAAASUVORK5CYII=</icon>
+
+  <properties>
+	<property key="longitude" type="attribute">
+      <caption>longitude</caption>
+      <category>Data source</category>
+      <description>The Map attribute.</description> 
+      <attributeTypes>
+        <attributeType name="Float"/>
+      </attributeTypes>
+    </property>
+	<property key="latitude" type="attribute">
+      <caption>latitude</caption>
+      <category>Data source</category>
+      <description>The Map attribute.</description> 
+      <attributeTypes>
+        <attributeType name="Float"/>
+      </attributeTypes>
+    </property>
+	<property key="startLat" type="attribute">
+      <caption>Start Latitude</caption>
+      <category>Initial</category>
+      <description>Start Latitude for first time open map</description> 
+      <attributeTypes>
+        <attributeType name="Float"/>
+      </attributeTypes>
+    </property>
+	<property key="startLon" type="attribute">
+      <caption>Start Longitude</caption>
+      <category>Initial</category>
+      <description>Start Longitude for first time open map</description> 
+      <attributeTypes>
+        <attributeType name="Float"/>
+      </attributeTypes>
+    </property>
+	<property key="zoomlevel" type="attribute">
+      <caption>Zoom Level</caption>
+      <category>Initial</category>
+      <description>Zoom Level for first time open map</description> 
+      <attributeTypes>
+        <attributeType name="Integer"/>
+      </attributeTypes>
+    </property>
+	<property key="startArea" type="attribute">
+      <caption>Start Area</caption>
+      <category>Initial</category>
+      <description>Area of Police Sation</description> 
+      <attributeTypes>
+        <attributeType name="String"/>
+      </attributeTypes>
+    </property>
+	<property key="searchArea" type="attribute">
+      <caption>Search Area</caption>
+      <category>Initial</category>
+      <description>Areacode for search result from DOPA can be multiple seperate by comma</description> 
+      <attributeTypes>
+        <attributeType name="String"/>
+      </attributeTypes>
+    </property>
+	<property key="road" type="attribute">
+      <caption>road address</caption>
+      <category>Address</category>
+      <description>road Name</description> 
+      <attributeTypes>
+        <attributeType name="String"/>
+      </attributeTypes>
+    </property>
+	<property key="tambol" type="attribute">
+      <caption>tambol address</caption>
+      <category>Address</category>
+      <description>tambol Name</description> 
+      <attributeTypes>
+        <attributeType name="String"/>
+      </attributeTypes>
+    </property>
+	<property key="amphur" type="attribute">
+      <caption>amphur address</caption>
+      <category>Address</category>
+      <description>amphur Name</description> 
+      <attributeTypes>
+        <attributeType name="String"/>
+      </attributeTypes>
+    </property>
+	<property key="province" type="attribute">
+      <caption>province address</caption>
+      <category>Address</category>
+      <description>province Name</description> 
+      <attributeTypes>
+        <attributeType name="String"/>
+      </attributeTypes>
+    </property>
+	<property key="zipcode" type="attribute">
+      <caption>zipcode address</caption>
+      <category>Address</category>
+      <description>zipcode Name</description> 
+      <attributeTypes>
+        <attributeType name="String"/>
+      </attributeTypes>
+    </property>
+	<property key="placename" type="attribute">
+      <caption>placename</caption>
+      <category>Address</category>
+      <description>place name from Longdo POI data</description> 
+      <attributeTypes>
+        <attributeType name="String"/>
+      </attributeTypes>
+    </property>
+	<property key="geodata" type="attribute">
+      <caption>geodata</caption>
+      <category>Address</category>
+      <description>keep line and polygon data on screen</description> 
+      <attributeTypes>
+        <attributeType name="String"/>
+      </attributeTypes>
+    </property>
+	<property key="editable" type="boolean" defaultValue="true">
+      <caption>Editable</caption>
+      <category>Behavior</category>
+      <description>Editable or not</description>
+    </property>
+  </properties>
+</widget>

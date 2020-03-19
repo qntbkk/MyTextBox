@@ -37,12 +37,12 @@ gulp.task("clean", function () {
     ], { force: true });
 });
 
-gulp.task("compress", ["clean"], function () {
+gulp.task("compress", gulp.series(["clean"], function () {
     return gulp.src("src/**/*")
         .pipe(zip(pkg.name + ".mpk"))
         .pipe(gulp.dest(paths.TEST_WIDGETS_FOLDER))
         .pipe(gulp.dest("dist"));
-});
+}));
 
 gulp.task("copy:js", function () {
     return gulp.src(["./src/**/*.js"])
@@ -84,5 +84,5 @@ gulp.task("modeler", function (cb) {
     widgetBuilderHelper.runmodeler(MODELER_PATH, MODELER_ARGS, paths.TEST_PATH, cb);
 });
 
-gulp.task("build", ["compress"]);
-gulp.task("version", ["version:xml", "version:json"]);
+gulp.task("build", gulp.series(["compress"]));
+gulp.task("version", gulp.series(["version:xml", "version:json"]));

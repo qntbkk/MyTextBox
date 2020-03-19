@@ -1,5 +1,12 @@
 This is a starter app for building dojo widget in mendix.
 How to use:
 
-- you need gulp install
-- run gulp build for genrate mpk file
+Required:
+- you need gulp install v4.0.0 up
+- you need node v12 up
+
+Build
+- npm install
+- gulp build
+
+

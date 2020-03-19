@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>พิมพ์รายงานแผนที่ระบบ CRIMES</title>
+    <script src="https://172.17.4.212/map2/?key=62ec7878c30a59eff5fe0c21e872cd91"></script>
+	<script src="/widgets/MyTextBox/widget/js/html2canvas.js"></script>
+	<script src="/widgets/MyTextBox/widget/js/jquery-min.js"></script>
+	<!--<script src="http://api.longdo.com/map/?key=62ec7878c30a59eff5fe0c21e872cd91"></script>-->
+	<style type="text/css" media="print">
+	  @page { size: landscape; }
+	</style>
+    <script>
+      var map;
+      function init() {
+        map = new longdo.Map({
+          placeholder: document.getElementById('map')
+        });
+		map.Overlays.enableAutoClosePopup(false);
+		map.Overlays.enableAutoFocusPopup(false);
+		
+		map.Event.bind('beforeContextmenu', function(event) {
+		  var element = document.createElement('div');
+		  element.innerHTML = '<a onclick="addtext(' + event.location.lon + ',' + event.location.lat + ');">เพิ่มข้อความ</a>';
+		  element.style.cursor = 'pointer';
+		  event.add(element);
+		});
+		
+		
+		var paramtxt = window.location.search.substring(1);
+		//console.log(paramtxt);
+		var paramslist = paramtxt.split('&');
+		if(paramslist.length<3){
+			alert('invalid parameters');
+		}
+		var stzoom=paramslist[2].split('=')[1];
+		var stlat=paramslist[0].split('=')[1];
+		var stlon=paramslist[1].split('=')[1];
+		var stgeodata=paramslist[3].split('=')[1];
+		
+		console.log(stgeodata);
+		
+		
+		
+		map.location({ lon:stlon, lat:stlat }, true);
+		map.zoom(stzoom);
+		marker1 = new longdo.Marker({lon: stlon, lat: stlat}, {
+			title: 'จุดเกิดเหตุ',
+			detail: 'จุดเกิดเหตุ',
+			size: {
+			  width: 300,
+			  height: 70
+			},
+			closable: true,
+			icon: {
+			  url: '/widgets/MyTextBox/widget/image/pin_mark.png',
+			  offset: { x: 11, y: 40 }
+			}
+		  });
+		map.Overlays.add(marker1);
+		
+		if((stgeodata.length>0)&&(stgeodata!=null)){
+			var dec = decodeURI(stgeodata);
+			var geoobj = JSON.parse(dec);
+			if(geoobj.geolist.length>0){
+				for(i=0;i<geoobj.geolist.length;i++){
+					if(geoobj.geolist[i].geotype === "line"){
+						var geom1 = new longdo.Polyline(geoobj.geolist[i].location,{editable: this.editable});
+						map.Overlays.add(geom1);
+					}else if(geoobj.geolist[i].geotype === "polygon"){
+						var geom2 = new longdo.Polygon(geoobj.geolist[i].location,{editable: this.editable});
+						map.Overlays.add(geom2);
+					}
+				}
+			}
+		}
+      }
+	  
+	  function exportimg(){
+		html2canvas(document.body, {
+		  onrendered: function(canvas) {
+			document.getElementById('download').href = canvas.toDataURL();
+			document.getElementById('download').download = "img.png";
+		  }
+		});
+		/*var transform=$(".ldmap_frame>div:first>div").css("transform")
+		var comp=transform.split(",") //split up the transform matrix
+		var mapleft=parseFloat(comp[4]) //get left value
+		var maptop=parseFloat(comp[5])  //get top value
+		$(".ldmap_frame>div:first>div").css({ //get the map container. not sure if stable
+		  "transform":"none",
+		  "left":mapleft,
+		  "top":maptop,
+		})
+		html2canvas($('#map'),
+		{
+		  useCORS: true,
+		  onrendered: function(canvas)
+		  {
+			var dataUrl= canvas.toDataURL('image/png');
+			document.getElementById('download').href=dataUrl //for testing I never get window.open to work
+			document.getElementById('download').download = "img.png";
+			$(".ldmap_frame>div:first>div").css({
+			  left:0,
+			  top:0,
+			  "transform":transform
+			})
+		  }
+		});*/
+	  }
+	  
+	  function addtext(alon,alat){
+		var popup3 = new longdo.Popup({lon:alon,lat:alat},
+			{
+			  html: '<div style="margin-left: 200px; margin-top: 35px;"><textarea row=3 cols=25 style="font-size: 16px;"></textarea></div>',
+			});
+			map.Overlays.add(popup3);
+	  }
+	  
+    </script>
+  </head>
+  <body onload="init()">
+    <div id="map" style="width:1400px;height:900px"></div>
+	<a id="download" onclick="exportimg()">Download as image</a>
+  </body>
+</html>

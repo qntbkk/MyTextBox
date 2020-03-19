@@ -1,0 +1,33 @@
+<div>
+	<table>
+	<tr><td>
+		<div id="searchDiv" style="text-align:left !important;">
+			<div id="layergroup" dojoAttachPoint="layergroupdj" class="layercheckbox">
+				<input type="checkbox" id="layer1" dojoAttachPoint="layer1dj"/> แสดงขอบเขตสถานี
+				<input type="checkbox" id="layer2" dojoAttachPoint="layer2dj"/> แสดงที่ตั้งสถานี
+			</div>
+			<input class="search"  type="text" id ="srcKey" placeholder="กรอกชื่อสถานที่..." dojoAttachPoint="searchKey" />
+			<input type="button" id="srcBut" dojoAttachPoint="srcButdj" title="ค้นหาข้อมูล" value="ค้นหา"  class="mendix_Button searchbutton"/>
+			<!--input class="search"  type="text" id ="srcKey" placeholder="Type at least 3 characters" dojoAttachPoint="searchKey" /-->
+			<img id="clear" dojoAttachPoint="cleardj" src="widgets/MyTextBox/widget/image/close.png" class="clearInput" width="16px" title="ล้างข้อมูล" >
+			<input type="button" id="home" title="กลับมาจุดเริ่มต้น" dojoAttachPoint="homedj" class="homeMarker">
+			<input type="button" id="addpin" title="ปักหมุดจุดเกิดเหตุ" dojoAttachPoint="addpindj" class="putMarker">
+			<input type="button" id="delGeom" dojoAttachPoint="delGeomdj" title="ลบรูปที่เลือก" value="ลบ"  class="mendix_Button delgeombutton"/>
+			<table class="suggests" id="suggests" ></table>
+			<div id="srcResult" class="srcResult" dojoAttachPoint="searchResult"></div>
+			<div id="route" class="routepane"></div>
+		</div>
+	</td></tr>
+	<tr><td>
+		<div id="map" dojoAttachPoint="mapDiv"></div>
+	</td></tr>	
+	<tr><td>
+		<div id="inputLatLon" dojoAttachPoint="inputLatLondj" class="inputlatlon">
+			กรอกข้อมูล Latitude:<input type="text" id="inputLat" dojoAttachPoint="inputLatdj" style="width: 120px;height: 25px;" class="mendixFormView_textBox"/>
+			Longitude:<input type="text" id="inputLon" dojoAttachPoint="inputLondj" style="width: 120px;height: 25px;" class="mendixFormView_textBox"/>
+			<input type="button" id="saveLoc" dojoAttachPoint="saveLocdj" title="บันทึก" value="บันทึก" style="height: 25px;width: 50px;" class="mendix_Button"/>
+			<input type="button" id="printMap" dojoAttachPoint="printMapdj" title="พิมพ์" value="พิมพ์" style="height: 25px;width: 50px;" class="mendix_Button"/>
+		</div>	
+	</td></tr>
+	</table>
+</div>

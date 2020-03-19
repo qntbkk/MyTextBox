@@ -1,0 +1,238 @@
+.search {
+	position: absolute;
+    z-index: 1000;
+    width: 252px;
+    margin-top:  45px;
+	margin-left: 165px;
+    height: 30px;
+    padding: 0 12px 0 25px;
+    background: white url("image/search.png") 8px 9px no-repeat;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #a8acbc #babdcc #c0c3d2;
+    border-radius: 5px;
+    /*-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-shadow: inset 0 1px #e5e7ed, 0 1px 0 #fcfcfc;
+    -moz-box-shadow: inset 0 1px #e5e7ed, 0 1px 0 #fcfcfc;
+    -ms-box-shadow: inset 0 1px #e5e7ed, 0 1px 0 #fcfcfc;
+    -o-box-shadow: inset 0 1px #e5e7ed, 0 1px 0 #fcfcfc;
+    box-shadow: inset 0 1px #e5e7ed, 0 1px 0 #fcfcfc;*/
+}
+
+.search:focus {
+    outline: none;
+    border-color: #66b1ee;
+    /*-webkit-box-shadow: 0 0 2px rgba(85, 168, 236, 0.9);
+    -moz-box-shadow: 0 0 2px rgba(85, 168, 236, 0.9);
+    -ms-box-shadow: 0 0 2px rgba(85, 168, 236, 0.9);
+    -o-box-shadow: 0 0 2px rgba(85, 168, 236, 0.9);
+    box-shadow: 0 0 2px rgba(85, 168, 236, 0.9);*/
+}
+
+.search:focus + .results { display: block }
+
+.clearInput{
+	position: absolute;
+	z-index: 1000;
+	margin-top: 52px;
+    margin-left: 395px;
+    /*right: 150px;*/
+	/*background: url("image/clear.png") 8px 4px no-repeat;*/
+	/*width: 35px;
+    height: 35px;*/
+    border-radius: 50%;
+}
+.clearInput:hover{
+	cursor:pointer;
+	border-radius: 50%;
+	border: 1px solid #fff;
+	/*background-color:#d4d4d4;*/
+}
+.putMarker{
+	position: absolute;
+    z-index: 1000;
+    margin-top: 35px;
+	margin-left: 120px;
+    background: white url("image/pin_mark_00.png") 12px 7px no-repeat;
+    width: 42px;
+    height: 43px;
+    border: #d4d4d4 1px solid;
+    border-radius: 5px;
+}
+.putMarker:hover{
+	background-color:#d4d4d4;
+	cursor:pointer;
+}
+
+.homeMarker{
+	position: absolute;
+    z-index: 1000;
+    margin-top: 35px;
+	margin-left: 75px;
+    background: white url("image/home.png") 8px 7px no-repeat;
+    width: 42px;
+    height: 43px;
+    border: #d4d4d4 1px solid;
+    border-radius: 5px;
+}
+.homeMarker:hover{
+	background-color:#d4d4d4;
+	cursor:pointer;
+}
+
+.suggests{
+	position: absolute;
+    z-index: 1000;
+    margin-top: 75px;
+    margin-left: 165px;
+    /*right: 143px;*/
+    background-color: white;
+    line-height: 30px;
+    font-size: 14px;
+}
+.suggests tr{
+	border-bottom:1px solid #d4d4d4;
+}
+.suggests tr:hover{
+	background-color:#A8DDE4;
+	color:#fff;
+}
+.suggests td{
+	padding: 0 12px 0 25px;
+	
+}
+.srcResult{
+	position: absolute;
+    z-index: 1000;
+    margin-top: 75px;
+	margin-left: 166px;
+    width: 250px;
+    
+    /*left: 455px;*/
+    background: #fff;
+	max-height: 310px;
+    overflow: auto;
+}
+.srcResult::-webkit-scrollbar {
+	width: 7px;
+}
+.srcResult::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	-webkit-border-radius: 9px;
+	border-radius: 9px;
+}
+.srcResult::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: #0099FF;
+}
+.del{
+	background: white url("image/bin24.png") 4px 3px no-repeat;
+    width: 30px;
+    height: 30px;
+    border: #d4d4d4 1px solid;
+    border-radius: 5px;
+}
+.del:hover{
+	background-color:#d4d4d4;
+	cursor:pointer;
+}
+.addPIN{
+	background: white url("image/pin_mark_00.png") 8px 2px no-repeat;
+    width: 30px;
+    height: 30px;
+    border: #d4d4d4 1px solid;
+    border-radius: 5px;
+}
+.addPIN:hover{
+	background-color:#d4d4d4;
+	cursor:pointer;
+}
+
+.myButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6));
+	background:-moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-webkit-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-o-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0);
+	background-color:#ffffff;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff));
+	background:-moz-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-webkit-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-o-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-ms-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0);
+	background-color:#f6f6f6;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.layercheckbox {
+	position: absolute;
+	z-index: 1000;
+	margin-top: 80px;
+	margin-left: 175px;
+	background-color: beige;
+}
+
+.searchbutton {
+	position: absolute;
+	z-index: 1000;
+	margin-top: 48px;
+	margin-left: 422px;
+	height: 25px;
+	width: 50px;
+}
+
+.delgeombutton {
+	position: absolute;
+    z-index: 1000;
+    margin-top: 4px;
+    margin-left: 138px;
+    height: 23px;
+    width: 25px;
+}
+
+.inputlatlon {
+	margin-top: 10px;
+	margin-left: 107px;
+	z-index: 1000;
+	background-color: beige;
+}
+
+.routepane {
+	position: absolute;
+    z-index: 1000;
+    margin-top: 100px;
+    margin-left: 50px;
+    width: 200px;
+    height: 300px;
+}
+
